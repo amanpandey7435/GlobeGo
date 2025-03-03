@@ -31,7 +31,7 @@ const mongoose=require("mongoose");
 app.use(express.urlencoded({extended:true}));
 app.set("views",path.join(__dirname,"/views"));
 app.use(express.static(path.join(__dirname,"/public")));
-const dbUrl=process.env.ATLASDB_URL;
+const dbUrl = process.env.ATLASDB_URL || "mongodb://localhost:27017/wanderlust";
 main().then(res=>console.log("Connection Successfull")).catch(err => console.log(err));
 
 async function main() {
@@ -41,6 +41,12 @@ async function main() {
   app.listen(port,()=>{
     console.log("Port is listening at 8080");
 })
+const mongoClientPromise = new Promise((resolve) => {
+    mongoose.connection.on("connected", () => {
+        const client = mongoose.connection.getClient();
+        resolve(client);
+    });
+});
 const store=MongoStore.create({
     mongoUrl:dbUrl,
     crypto:{
