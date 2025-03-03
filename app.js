@@ -31,9 +31,9 @@ const mongoose=require("mongoose");
 app.use(express.urlencoded({extended:true}));
 app.set("views",path.join(__dirname,"/views"));
 app.use(express.static(path.join(__dirname,"/public")));
-const dbUrl = process.env.ATLASDB_URL || "mongodb://localhost:27017/wanderlust";
+const dbUrl = process.env.ATLASDB_URL ;
 main().then(res=>console.log("Connection Successfull")).catch(err => console.log(err));
-
+//|| "mongodb://localhost:27017/wanderlust"
 async function main() {
     
     await mongoose.connect(dbUrl);
