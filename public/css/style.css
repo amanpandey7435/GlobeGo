@@ -1,0 +1,98 @@
+*{
+    font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  
+}
+body{
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+.container{
+    flex: 1;
+}
+/* navbar */
+.navbar-brand{
+    font-size: 2rem;
+    color:#fe424d;
+}
+.nav-link:hover{
+    text-decoration: underline;
+}
+/* footer */
+.footer{
+    background-color:#ebebeb;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+.socials{
+   margin-top: 0.5rem;
+    width:200px;
+    height:2rem;
+    align-items: center;
+
+}
+.fa-brands{
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+.socials-link a{
+    text-decoration: none;
+    color:black;
+
+}
+.socials-link a:hover{
+    text-decoration: underline;
+}
+/* index */
+.card-img-top{
+    border-radius:8px;
+}
+.card{
+    border:none !important;
+    margin-bottom:1rem;
+}
+a{
+    text-decoration:none !important;
+}
+.card:hover{
+    opacity: 0.8;
+}
+/* Show page */
+.show-img{
+    height:50vh;
+    width:70vh;
+}
+.btns{
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    
+}
+.edit{
+    width:6rem;
+}
+button{
+    margin-right: 1rem;
+}
+/* reciew */
+.cards{
+    
+}
+/* signup */
+/* Map */
+
+
+#map { 
+    height:400px;
+    width:100vh;
+ }

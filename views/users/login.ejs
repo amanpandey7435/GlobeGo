@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplateCode") -%>
+ <div class="signupB row mt-5">
+    <div class="col-4 offset-4">
+        <h1 style="color:red;">Login in WanderLust</h1>
+       <form action="/login" method="POST" class="needs-validation" novalidate>
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" required class="form-control">
+        <div class="invalid-feedback">
+            Username is incorrect
+        </div>
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" required class="form-control">
+        <div class="invalid-feedback">
+            Incorect password
+        </div>
+        <button class="btn btn-danger mt-4">login</button>
+       </form>
+    </div>
+ </div>

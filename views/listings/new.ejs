@@ -1,0 +1,29 @@
+<% layout("/layouts/boilerplateCode") -%>
+<body>
+    <h1>Create your Listings:</h1>
+    <form action="/listings" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+        <label for="title" class="form-label">Title:</label>
+            <input type="text" class="form-control" name="listing[title]" required id="title" placeholder="enter your title for listings">
+            <div class="invalid-feedback">
+                Enter an appropraite Title
+              </div>
+              <div class="valid-feedback">
+                Title looks catchy!
+              </div>
+        <label for="description" class="form-label">Description:</label>
+        <textarea name="listing[description]" class="form-control" id="" required placeholder="description"></textarea>
+        <label for="image" class="form-label">Upload Image:</label>
+        <input type="file" name="listing[image]" class="form-control" id="image" required>
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" name="listing[price]" class="form-control" required id="price" placeholder="enter price">
+        <div class="invalid-feedback">
+            Enter valid price
+          </div>
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" name="listing[location]" class="form-control" id="location" placeholder="Enter location of your place">
+        <label for="country" class="form-label">Country:</label>
+        <input type="text" name="listing[country]" class="form-control" required id="country" placeholder="Country"> <br>
+        
+        <button  class="btn btn-danger" style="width:7rem;">Add</button>
+    </form>
+</body>
