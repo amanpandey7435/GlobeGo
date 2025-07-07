@@ -18,7 +18,7 @@ module.exports.singup=async(req,res)=>{
         
     }
     catch(e){
-        req.flash("error","OOPs! you are not registered");
+        req.flash("error","OOPs! You are already registered");
         res.redirect("/signup");
     }
 };
