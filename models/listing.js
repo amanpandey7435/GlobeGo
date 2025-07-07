@@ -29,6 +29,9 @@ const listingSchema=new Schema({
         type:String,
         
     },
+    categories:{
+        type:String,
+    },
     reviews:[
         {
             type:Schema.Types.ObjectId,

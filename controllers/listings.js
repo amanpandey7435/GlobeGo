@@ -100,3 +100,11 @@ module.exports.destroyListing=async(req,res)=>{
     req.flash("success","Listing deleted");
     res.redirect("/listings");
 };
+module.exports.categories=async(req,res)=>{
+    let {categories}=req.params;
+    
+    
+    const regex = new RegExp(categories, 'i'); 
+    const listings = await Listing.find({ categories: regex });
+    res.render("listings/category.ejs",{listings,categories});
+}

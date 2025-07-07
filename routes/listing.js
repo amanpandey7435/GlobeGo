@@ -35,6 +35,8 @@ router.route("/:id")
 .delete(isLoggedIn,isOwner,wrapAsync(listingController.destroyListing))
 .put(isLoggedIn,upload.single('listing[image]'),validateListing,wrapAsync(listingController.editListing));
 
+// category
+router.route("/categories/:categories").get(listingController.categories);
 
 
 
