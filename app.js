@@ -22,6 +22,7 @@ const passport=require("passport");
 const LocalStrategy=require("passport-local");
 const User=require("./models/user.js");
 
+const fs = require("fs");
 
 
 // requiring ejs mate
@@ -102,7 +103,18 @@ const {listingschema}=require("./schema.js");
 const listingRouter=require("./routes/listing.js");
 const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
+app.get("/favicon.ico", (req, res) => {
+  const filePath = path.join(__dirname, "public", "favicon.ico");
 
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      console.error("Favicon read error:", err);
+      return res.status(500).send("Error loading favicon");
+    }
+    res.setHeader("Content-Type", "image/x-icon");
+    res.send(data);
+  });
+});
 
 
 app.use("/listings",listingRouter);
